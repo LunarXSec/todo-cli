@@ -30,7 +30,6 @@ fn print_list(tasks: &Vec<Task>) {
     }
 }
 fn print_help() {
-    println!("List - lists all the todo tasks");
     println!("Add - adds a item to the list");
     println!("Toggle - Toggles an item on or off");
     println!("Help - shows this menu");
@@ -52,19 +51,16 @@ fn main() {
     }
     loop {
 	print!("{esc}[2J{esc}[1;1H", esc = 27 as char);
+	print_list(&tasks);
 	println!("What would you like to do?");
 	io::stdin().read_line(&mut s).expect("Not a correct string");
-	if "list".eq(&s.trim().to_string()) {
-	    print_list(&tasks);
-	    wait();
-	}else if "add".eq(&s.trim().to_string()) {
+	if "add".eq(&s.trim().to_string()) {
 	    println!("Please enter the name");
 	    io::stdin().read_line(&mut msg).expect("Not a correct string");
 	    tasks.push(Task{message: msg.trim().to_string(), is_done:false});
 	    msg="".to_string();
 	}else if "toggle".eq(&s.trim().to_string()) {
 	    println!("Which one?");
-	    print_list(&tasks);
 	    io::stdin().read_line(&mut sel).expect("Failed to read");
 	    seln = sel.trim().parse().expect("Not a number");
 	    tasks[seln - 1].is_done = !tasks[seln - 1].is_done;
@@ -74,7 +70,6 @@ fn main() {
 	    wait();
 	}else if "remove".eq(&s.trim().to_string()) {
 	    println!("Which one?");
-	    print_list(&tasks);
 	    io::stdin().read_line(&mut sel).expect("Failed to read");
 	    seln = sel.trim().parse().expect("Not a number");
 	    tasks.remove(seln - 1);
