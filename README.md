@@ -15,3 +15,11 @@ Make sure you run this in Windows Terminal not Command Prompt because Command Pr
 ```console
 ./linux-todo-cli-x86_64
 ```
+# How to use
+You can type help to show this information but here it is
+List - lists all the todo tasks
+Add - adds a item to the list
+Toggle - Toggles an item on or off
+Exit - exits the program
+Remove - removes an item
+Erase - removes all data
