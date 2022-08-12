@@ -23,3 +23,4 @@ You can type help to show this information but here it is
 4. Exit - exits the program
 5. Remove - removes an item
 6. Erase - removes all data
+7. Help - Shows the help menu
