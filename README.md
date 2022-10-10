@@ -15,6 +15,9 @@ Make sure you run this in Windows Terminal not Command Prompt because Command Pr
 ```console
 ./linux-todo-cli-x86_64
 ```
+# For MacOS
+Just double click it!
+
 # How to use
 You can type help to show this information but here it is
 1. List - lists all the todo tasks
